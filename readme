@@ -1,1 +1,1 @@
-aws s3 --region=ap-south-1 sync . s3://documentation.getkwery.com/
+aws s3 --region=ap-south-1 --delete sync . s3://documentation.getkwery.com/
