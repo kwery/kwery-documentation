@@ -138,7 +138,7 @@ If there are multiple SQL queries in a report, they are executed in parallel to 
 
 ##Report Label
 
-Labels let you organise, search and filer reports. Click on Reports and once the dropdown is shown, click on Labels to add/modify labels.
+Labels let you organise, search and filter reports. Click on Reports and once the dropdown is shown, click on Labels to add/modify labels.
 
 ![Report Label Add](img/reportLabelAdd.png)
 
@@ -156,7 +156,7 @@ Click on Settings and then in the dropdown on Email to configure SMTP and email 
 
 ###SMTP Configuration
 
-If you have configured Postfix on the server running Kwery, then you can use 'Use local SMTP settings' to delegate eamil sending to the configured local Postfix instance. If not, you can use the SMTP server of your choice by entering the additional details.
+If you have configured Postfix on the server running Kwery, then you can use 'Use local SMTP settings' to delegate email sending to the configured local Postfix instance. If not, you can use the SMTP server of your choice by entering the additional details.
 
 ![SMTP Configuration](img/smtpConfiguration.png)
 
@@ -203,7 +203,7 @@ A report can be viewed from the Reports list page. Click on the 'Executions' ico
 
 ###Report Search
 
-You can search for a report generated between a particular time as show below.
+You can search for a report generated between a particular time as shown below.
 
 ![Report Execution Search](img/reportExecutionSearch.png)
 
