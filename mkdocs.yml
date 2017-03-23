@@ -1,3 +1,7 @@
 site_name: Kwery Documentation
+site_favicon: favicon.ico
+repo_name: Kwery 
+repo_url: http://getkwery.com
+google_analytics: ['UA-93051562-1', 'getkwery.com']
 pages:
   - Home: index.md
