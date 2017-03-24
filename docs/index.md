@@ -9,6 +9,7 @@ Kwery makes it simple and easy to generate, schedule, view and email business re
 * MySQL
 * Postgres
 * AWS Redshift
+* SQL Server
 
 More datasources are coming soon.
 
@@ -66,7 +67,7 @@ java -jar -DlogFilePath=/var/log kwery.jar
 ```
 kwery.log will be created in /var/log folder.
 
-To keep Kwery running once you log off from the server, you have to either background Kwery or run it as a daemon/service. Backgroundign is the easiesty, add an & at the end of the jar command as below
+To keep Kwery running once you log off from the server, you have to either background Kwery or run it as a daemon/service. Backgrounding is the easiest, add an & at the end of the jar command as below
 
 ```
 java -jar  kwery.jar &
@@ -74,29 +75,29 @@ java -jar  kwery.jar &
 
 If you want to run Kwery as a service/daemon, you can either use <a href="http://supervisord.org" target="_blank">supervisor</a> or write your own init scripts.
 
-##Register database
+##Register datasource
 
 Click on Datasorces on the navbar and then click on the + button on the datasources list page.
 
 ![Add Datasource](img/addDatasource.png)
 
-Fill in the details in the 'Datasource' page. Ensure that the server where you are running Kwery can connect to the database.
+Fill in the details in the Datasource page. Ensure that the server where you are running Kwery can connect to the datasource.
 
 ![Add Datasource](img/saveDatasource.png)
 
-##Add report
+##Add report template
 
-Click on Reports and then in the dropdown click on List.
+Click on Reports and then in the dropdown, click on List.
 
 ![Add Report](img/addReport.png)
 
-Report has multiple sections, many of them are self explanatory, we will go over the important ones one by one.
+Report template has multiple sections, many of them are self explanatory, we will go over the important ones one by one.
 
 ###Label
 
-A report can have multiple labels. You can use the plus button to add more labels and use the trash button to delete labels from reports.
+A report template can have multiple labels. You can use the plus button to add more labels and use the trash button to delete labels from report templates.
 
-![Reprot Label](img/reportLabel.png)
+![Report Label](img/reportLabel.png)
 
 ###Schedule
 
@@ -104,17 +105,23 @@ Schedule determines the frequency at which the report is generated, it can be as
 
 ![Report Schedule](img/schedule.png)
 
-You can use the text box to enter a cron expression if your needs are complicated or use the GUI dropdown for simple schedules. Also, report generation can be chained to say that generate this report after another report. Use the 'After' option for this.
+You can use the GUI or enter a cron expression to schedule reports.
+
+Also, report generation can be chained to say that generate this report after another report. Use the 'After' option for this.
 
 ###Report Subscription Email
 
 Comma separated list of email addresses to which the generated report will be emailed to. Also, you can opt out of sending an email if the report is empty i.e the SQL query returned an empty result set.
+
+Unless you configure [SMTP](#smtp-configuration) and [Sender details](#sender-details-configuration), this feature is disabled.
 
 ![Report Email](img/reportEmail.png)
 
 ###Failure Alert Email
 
 Comma separated list of email addresses which will be alerted in case report generation fails.
+
+Unless you configure [Kwery URL](#kwery-url), this feature is disabled.
 
 ![Failure Alert Email](img/reportFailureEmail.png)
 
@@ -136,17 +143,17 @@ If there are multiple SQL queries in a report, they are executed in parallel to 
 
 ![SQL query execution](img/sqlQueryExecution.png)
 
-##Report Label
+##Report Template Label
 
-Labels let you organise, search and filter reports. Click on Reports and once the dropdown is shown, click on Labels to add/modify labels.
+Labels let you organise, search and filter report templates. Click on Reports and once the dropdown is shown, click on Labels to add/modify labels.
 
 ![Report Label Add](img/reportLabelAdd.png)
 
-You can search a report based on labels in the report list page.
+You can search a report template based on labels in the report template list page.
 
 ![Report Search](img/reportSearch.png)
 
-Reports can also be filtered using labels.
+Report templates can also be filtered using labels.
 
 ![Report Filter](img/reportFilter.png)
 
@@ -160,15 +167,15 @@ If you have configured Postfix on the server running Kwery, then you can use 'Us
 
 ![SMTP Configuration](img/smtpConfiguration.png)
 
-###Email Configuration
+###Sender Details Configuration
 
-From address of email sent from Kwery is configured here.
+From address of email sent from Kwery, bcc and reply to email addresses are configured here.
 
-![Email Configuration](img/emailConfigurationSave.png)
+![Sender Details Configuration](img/senderDetailsSave.png)
 
 ###Test Email Configuration
 
-Once you have saved SMTP and Email configuration, test as to whether you can send email successfully using 'Send Test Email' button.
+Once you have saved SMTP and Sender Details configuration, test as to whether you can send emails successfully using 'Send Test Email' button.
 
 ![Test Email Configuration](img/testEmailConfiguration.png)
 
@@ -194,7 +201,7 @@ If at any point of time, you want to stop a report generation, click on the stop
 
 ##Report view, download and search
 
-A report can be viewed from the Reports list page. Click on the 'Executions' icon and in the following page, click on the report icon.
+A report can be viewed from the Reports list page. Click on the 'Reports' icon and in the following page, click on the 'Report' icon.
 
 ![Report Executions](img/reportExecutions.png)
 
@@ -216,12 +223,18 @@ In the report view page, click on the 'Download' icon to download a report as CS
 
 ##User Management
 
-Click on 'Settings' in the navbar and then on 'Users' in the dropdown to manage users.
+Click on 'Settings' in the navbar and then on 'Users' in the dropdown to manage users. This feature is available only to admins.
+
+The first user who signs up is given admin privileges.
 
 ![User Management](img/userNavigation.png)
 
-You can add, delete and edit users from here.
+![User Management](img/userManagement.png) 
 
-![User Management](img/userManagement.png)
+An admin can promote other users to admin. An admin can also reset user passwords.
+
+![Password Reset](img/passwordReset.png)
+
+![Kwery Admin](img/kweryAdmin.png)
 
 
