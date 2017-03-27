@@ -1,8 +1,10 @@
 site_name: Kwery Documentation
+site_url: https://documentation.getkwery.com
 site_favicon: favicon.ico
 site_description: Documentation for Kwery, the easiest way to generate, schedule, view and email business reports from datasources using SQL
 repo_name: Kwery 
-repo_url: http://getkwery.com
+repo_url: https://getkwery.com
 google_analytics: ['UA-93051562-1', 'getkwery.com']
 pages:
   - Home: index.md
+copyright:  <a href="https://getkwery.com" target="kwery">Kwery</a> - The simplest way to generate, schedule, view and email business reports from datasources using SQL.
