@@ -19,7 +19,7 @@ You can run Kwery on your desktop too for testing etc but the advised way is to 
 
 ### Download Kwery
 
-If you have not already downloaded Kwery, the first thing you have to do is [download Kwery](https://s3.amazonaws.com/getkwery-download/kwery-1.9.jar). Create a folder on your server called kwery and save the jar file in that folder. It is advisable to run Kwery from a folder of it's own because on startup, Kwery creates certain folders of it's own which it uses for storing search indexes, metadata etc. ___**Do not tamper with any of these folders, you might accidentally corrupt the data thus losing all your precious work. Also, once you have Kwery up and running, do not delete any of these folders, you will end up losing all your work.**___
+If you have not already downloaded Kwery, the first thing you have to do is [download Kwery](https://github.com/kwery/kwery/releases). Create a folder on your server called kwery and save the jar file in that folder. It is advisable to run Kwery from a folder of it's own because on startup, Kwery creates certain folders of it's own which it uses for storing search indexes, metadata etc. ___**Do not tamper with any of these folders, you might accidentally corrupt the data thus losing all your precious work. Also, once you have Kwery up and running, do not delete any of these folders, you will end up losing all your work.**___
 
 ### Verify Java 8 is installed
 
